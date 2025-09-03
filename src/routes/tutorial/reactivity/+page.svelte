@@ -1,4 +1,7 @@
 <script lang="ts">
+	// Demonstration of reactivity in Svelte using $state, $derived, and $effect
+	import Counter from '$lib/components/Counter.svelte';
+
 	let count = $state(0);
 	let numbers = $state([1, 2, 3, 4]);
 	let total = $derived(numbers.reduce((acc, n) => acc + n, 0));
@@ -15,10 +18,6 @@
 		};
 	});
 
-	function increment() {
-		count += 1;
-	}
-
 	function addNumber() {
 		numbers.push(numbers.length + 1);
 	}
@@ -32,10 +31,12 @@
 <div class="flex flex-col items-center justify-center gap-4 p-4">
 	<h1>Reactivity in Svelte</h1>
 
-	<button class="btn preset-filled-primary-950-50" onclick={increment}>
-		Clicked {count}
-		{count === 1 ? 'time' : 'times'}
-	</button>
+	<div class="flex gap-2">
+	<Counter />
+	<Counter />
+	<Counter />
+	<Counter />
+	</div>
 
 	<button class="btn preset-filled-secondary-950-50" onclick={addNumber}> Add a number </button>
 
