@@ -1,21 +1,23 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	
-	let mounted = false;
-	let particles: Array<{id: number, x: number, y: number, speed: number}> = [];
-	
+	let mounted = $state(false);
+    let particles = $state([] as Array<{id: number, x: number, y: number, speed: number}>);
+			
 	onMount(() => {
-		mounted = true;
-		// Initialize particles for animation
-		for (let i = 0; i < 50; i++) {
-			particles.push({
-				id: i,
-				x: Math.random() * 100,
-				y: Math.random() * 100,
-				speed: Math.random() * 2 + 0.5
-			});
-		}
-	});
+        mounted = true;
+        // Initialize particles for animation
+        const newParticles = [];
+        for (let i = 0; i < 50; i++) {
+            newParticles.push({
+                id: i,
+                x: Math.random() * 100,
+                y: Math.random() * 100,
+                speed: Math.random() * 2 + 0.5
+            });
+        }
+        particles = newParticles;
+    });
 
 	const tutorialSections = [
 		{
@@ -38,6 +40,20 @@
 			icon: "🧠",
 			href: "/tutorial/logic",
 			color: "from-green-500 to-emerald-500"
+		},
+		{
+			title: "Events",
+			description: "Handle user interactions & events",
+			icon: "🎯",
+			href: "/tutorial/events",
+			color: "from-orange-500 to-red-500"
+		},
+		{
+			title: "Bindings",
+			description: "Two-way data binding mastery",
+			icon: "🔄",
+			href: "/tutorial/bindings",
+			color: "from-indigo-500 to-violet-500"
 		}
 	];
 </script>
@@ -46,23 +62,30 @@
 <div class="min-h-screen bg-gray-900 relative overflow-hidden">
 	
 	<!-- Animated Grid Background -->
-	<div class="absolute inset-0 opacity-20">
-		<div class="grid grid-cols-12 grid-rows-12 h-full w-full">
-			{#each Array(144) as _, i}
-				<div class="border border-cyan-500/30 animate-pulse" style="animation-delay: {(i * 50)}ms;"></div>
-			{/each}
-		</div>
-	</div>
+    {#if mounted}
+        <div class="absolute inset-0 opacity-20 z-0">
+            <div class="grid grid-cols-12 grid-rows-12 h-full w-full">
+                {#each Array(144) as _, i}
+                    <div 
+                        class="border border-cyan-500/30" 
+                        style="animation: pulse 2s ease-in-out infinite; animation-delay: {(i * 100)}ms;"
+                    ></div>
+                {/each}
+            </div>
+        </div>
+    {/if}
 
-	<!-- Floating Particles -->
-	<div class="absolute inset-0 overflow-hidden">
-		{#each particles as particle}
-			<div 
-				class="absolute w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-60"
-				style="left: {particle.x}%; top: {particle.y}%; animation-delay: {particle.id * 100}ms;"
-			></div>
-		{/each}
-	</div>
+    <!-- Floating Particles -->
+    {#if mounted}
+        <div class="absolute inset-0 overflow-hidden z-0">
+            {#each particles as particle}
+                <div 
+                    class="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-60"
+                    style="left: {particle.x}%; top: {particle.y}%; animation: ping 3s ease-in-out infinite; animation-delay: {particle.id * 150}ms;"
+                ></div>
+            {/each}
+        </div>
+    {/if}
 
 	<!-- Hero Section with Unsplash Background -->
 	<section class="relative z-10 min-h-screen flex items-center justify-center">
@@ -157,7 +180,7 @@
 			<!-- System Stats -->
 			<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
 				<div class="text-center p-4 border border-gray-700 rounded-lg bg-gray-900/50 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-cyan-400">03</div>
+					<div class="text-2xl font-bold text-cyan-400">05</div>
 					<div class="text-sm text-gray-400 font-mono">MODULES</div>
 				</div>
 				<div class="text-center p-4 border border-gray-700 rounded-lg bg-gray-900/50 backdrop-blur-sm">

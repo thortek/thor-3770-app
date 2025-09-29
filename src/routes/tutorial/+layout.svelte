@@ -9,6 +9,9 @@
 		<li><a href="/tutorial/reactivity">Reactivity</a></li>
 		<li><a href="/tutorial/props">Props</a></li>
 		<li><a href="/tutorial/logic">Logic</a></li>
+		<li><a href="/tutorial/events">Events</a></li>
+		<li><a href="/tutorial/bindings">Bindings</a></li>
+		
 	</ul>
 </nav>
 
