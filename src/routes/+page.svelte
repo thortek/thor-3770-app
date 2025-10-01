@@ -81,7 +81,7 @@
             {#each particles as particle}
                 <div 
                     class="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-60"
-                    style="left: {particle.x}%; top: {particle.y}%; animation: ping 3s ease-in-out infinite; animation-delay: {particle.id * 150}ms;"
+                    style="left: {particle.x}%; top: {particle.y}%; animation: ping 3s ease-in-out infinite; animation-delay: {particle.id * 100}ms;"
                 ></div>
             {/each}
         </div>
