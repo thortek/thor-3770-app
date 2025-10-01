@@ -2,4 +2,4 @@
     let { name = 'Thor' } = $props()
 </script>
 
-<p>Hello {name}!</p>
+<p class="text-primary-50-950">Hello {name}!</p>
