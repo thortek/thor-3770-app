@@ -13,10 +13,7 @@ let cardColor = $state('#fef3c7')
     <div class="flex flex-col items-center gap-2">
         <p class="text-sm">Toggle conditional classes</p>
         <button 
-            class="relative text-9xl h-80 w-[15rem] border-2 rounded-2xl transition-transform duration-700 [transform-style:preserve-3d]"
-            class:bg-amber-300={flipped}
-            class:text-blue-300={flipped}
-            class:[transform:rotateY(180deg)]={flipped}
+            class="relative text-9xl h-80 w-[15rem] border-2 rounded-2xl transition-transform duration-700 [transform-style:preserve-3d] {flipped ? 'bg-amber-300 [--tw-rotate-y:180deg]' : ''}"
             onclick={() => flipped = !flipped}>
             <div class="front absolute inset-0 [backface-visibility:hidden]">
                 <span class="symbol">♠</span>
