@@ -1,6 +1,8 @@
-🚀 Thor Dev - Svelte Tutorial Application
+## 🚀 Thor Dev - Svelte Tutorial Application
 
 A comprehensive, interactive Svelte 5 tutorial application showcasing modern web development practices with beautiful UI and hands-on examples.
+
+See the live demo: [https://thor-3770-app.vercel.app/](https://thor-3770-app.vercel.app/)
 
 ![Tutorial Home](static/PikaThorAnime.png)
 
