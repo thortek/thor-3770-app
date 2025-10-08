@@ -9,7 +9,9 @@
 		{ href: '/tutorial/props', label: 'Props', icon: '🔗' },
 		{ href: '/tutorial/logic', label: 'Logic', icon: '🧠' },
 		{ href: '/tutorial/events', label: 'Events', icon: '🎯' },
-		{ href: '/tutorial/bindings', label: 'Bindings', icon: '🔄' }
+		{ href: '/tutorial/bindings', label: 'Bindings', icon: '🔄' },
+		{ href: '/tutorial/classes-styles', label: 'Classes & Styles', icon: '🎨' },
+		{ href: '/tutorial/motion', label: 'Motion', icon: '✨' }
 	];
 </script>
 
