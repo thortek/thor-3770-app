@@ -3,6 +3,7 @@
 	import { Progress } from '@skeletonlabs/skeleton-svelte'
 	import { Tween, Spring } from 'svelte/motion'
 	import { cubicOut } from 'svelte/easing'
+	import { flip } from 'svelte/animate'
 
 	let checkboxVisible = $state(true)
 	let flyVisible = $state(true)
@@ -20,8 +21,7 @@
 		})
 	)
 
-	let coords = new Spring(
-		{ x: 50, y: 50 },
+	let coords = new Spring( { x: 50, y: 50 },
 		{
 			stiffness: 0.1,
 			damping: 0.25
@@ -48,11 +48,23 @@
 			}
 		}
 	}
+
+	let todos = $state([
+		{ id: 1, text: 'Learn Svelte', completed: false },
+		{ id: 2, text: 'Build a Svelte app', completed: false },
+		{ id: 3, text: 'Master Svelte transitions', completed: false },
+		{ id: 4, text: 'Contribute to Svelte community', completed: false },
+		{ id: 5, text: 'Explore SvelteKit', completed: false }
+	])
+
+	function shuffle() {
+		todos = todos.sort(() => Math.random() - 0.5)
+	}
 </script>
 
 <div class="m-4 flex flex-col items-center gap-4 p-4">
 	<div class="flex gap-4">
-		<div>
+		<div class="w-72">
 			<label class="flex items-center gap-2">
 				<input type="checkbox" class="checkbox" bind:checked={checkboxVisible} />
 				Show Thor mowing the lawn
@@ -66,7 +78,7 @@
 				/>
 			{/if}
 		</div>
-		<div>
+		<div class="w-72">
 			<label class="flex items-center gap-2">
 				<input type="checkbox" class="checkbox" bind:checked={flyVisible} />
 				Show Bizzaro Squidward
@@ -80,6 +92,22 @@
 					out:fade
 				/>
 			{/if}
+		</div>
+		<div class="m-4 flex flex-col items-center gap-2">
+			<h2 class="text-lg font-bold">Todo List</h2>
+			<button class="btn preset-filled-primary-950-50" type="button" onclick={shuffle}>
+				Shuffle Todos
+			</button>
+			<ul>
+				{#each todos as todo (todo.id)}
+					<li
+						class="my-2 rounded border p-2 shadow"
+						animate:flip={{ duration: 600}}
+					>
+						{todo.text}
+					</li>
+				{/each}
+			</ul>
 		</div>
 	</div>
 	<div class="flex w-full gap-4">
