@@ -87,7 +87,7 @@ Master component communication:
 - `Child.svelte` - Accepts `name` prop with default value
 - `CodeBlock` - Syntax-highlighted code examples
 
-### 🧠 Logic
+### 🧠 [`Logic`](src/routes/tutorial/logic/+page.svelte)
 Control flow and rendering patterns:
 - **`#if/#else`**: Conditional rendering
 - **`#each`**: Loop through arrays
