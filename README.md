@@ -52,7 +52,7 @@ thor-3770-app/
 │   │   │   ├── CodeBlock/        # Syntax highlighting
 │   │   │   └── ...
 │   │   ├── global/               # Global state
-│   │   │   └── globalCount.svelte.ts
+│   │   │   └── globalState.svelte.ts
 │   │   └── utils/                # Utility functions
 │   ├── app.css                   # Global styles
 │   └── app.html                  # HTML template
@@ -74,7 +74,7 @@ Learn Svelte's reactive state management:
 
 **Key Components:**
 - `Counter.svelte` - Independent counter with shared global state
-- `globalCount.svelte.ts` - Shared reactive state
+- `globalState.svelte.ts` - Shared reactive state
 
 ### 🔗 Props
 Master component communication:
@@ -205,7 +205,7 @@ The build output is optimized and ready for deployment to Vercel or any Node.js 
 
 ### Reactive State with `$state`
 ```typescript
-// src/lib/global/globalCount.svelte.ts
+// src/lib/global/globalState.svelte.ts
 export const counter = $state({ count: 0 })
 ```
 
