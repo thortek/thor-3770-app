@@ -4,7 +4,7 @@ export const counter = $state(
 )
 
 export const authState = $state({
-    user: null,
+    user: null as unknown,
     isAuthenticated: false
 })
 

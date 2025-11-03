@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
+	import { authState } from '$lib/global/globalState.svelte'
 
 	let mounted = $state(false)
 	let particles = $state([] as Array<{ id: number; x: number; y: number; speed: number }>)
@@ -101,16 +102,51 @@
 		<div class="relative z-20 mx-auto max-w-7xl px-6 py-20">
 			<!-- Main Header -->
 			<div class="mb-16 text-center">
-				<div class="mb-6 space-x-4">
-				<a href="/api/auth/login">
-					<button type="button" class="btn preset-filled-primary-950-50">Login</button>
-				</a>
-				<a href="/api/auth/register">
-					<button type="button" class="btn preset-filled-primary-950-50">Register</button>
-				</a>
-				<a href="api/auth/logout">
-					<button type="button" class="btn preset-filled-primary-950-50">Logout</button>
-				</a>
+				<!-- Enhanced Auth Buttons -->
+				<div class="mb-8 flex justify-center gap-4">
+					{#if authState.isAuthenticated}
+						<!-- Logout Button - Only visible when authenticated -->
+						<a href="/api/auth/logout" class="group relative">
+							<div
+								class="absolute -inset-1 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 opacity-50 blur transition duration-300 group-hover:opacity-75"
+							></div>
+							<button
+								type="button"
+								class="relative flex items-center gap-2 rounded-lg border border-orange-500/50 bg-gray-900 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/50"
+							>
+								<span class="text-xl">🚪</span>
+								<span>Logout</span>
+							</button>
+						</a>
+					{:else}
+						<!-- Login Button - Only visible when NOT authenticated -->
+						<a href="/api/auth/login" class="group relative">
+							<div
+								class="absolute -inset-1 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 opacity-50 blur transition duration-300 group-hover:opacity-75"
+							></div>
+							<button
+								type="button"
+								class="relative flex items-center gap-2 rounded-lg border border-cyan-500/50 bg-gray-900 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/50"
+							>
+								<span class="text-xl">🔐</span>
+								<span>Login</span>
+							</button>
+						</a>
+
+						<!-- Register Button -->
+						<a href="/api/auth/register" class="group relative">
+							<div
+								class="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 opacity-50 blur transition duration-300 group-hover:opacity-75"
+							></div>
+							<button
+								type="button"
+								class="relative flex items-center gap-2 rounded-lg border border-purple-500/50 bg-gray-900 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/50"
+							>
+								<span class="text-xl">📝</span>
+								<span>Register</span>
+							</button>
+						</a>
+					{/if}
 				</div>
 				<div
 					class="mb-8 inline-block rounded-lg border border-cyan-500/50 bg-gray-900/50 p-4 backdrop-blur-sm"

@@ -1,8 +1,15 @@
 <script lang="ts">
-	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import '../app.css'
+	import favicon from '$lib/assets/favicon.svg'
+	import { setAuthState } from '$lib/global/globalState.svelte'
 
-	let { children } = $props();
+	// Get data from +layout.server.ts
+	let { data, children } = $props()
+	
+	// Update auth state when data changes
+	$effect(() => {
+		setAuthState(data.user, data.isAuthenticated)
+	})
 </script>
 
 <svelte:head>
