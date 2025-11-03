@@ -101,6 +101,17 @@
 		<div class="relative z-20 mx-auto max-w-7xl px-6 py-20">
 			<!-- Main Header -->
 			<div class="mb-16 text-center">
+				<div class="mb-6 space-x-4">
+				<a href="/api/auth/login">
+					<button type="button" class="btn preset-filled-primary-950-50">Login</button>
+				</a>
+				<a href="/api/auth/register">
+					<button type="button" class="btn preset-filled-primary-950-50">Register</button>
+				</a>
+				<a href="api/auth/logout">
+					<button type="button" class="btn preset-filled-primary-950-50">Logout</button>
+				</a>
+				</div>
 				<div
 					class="mb-8 inline-block rounded-lg border border-cyan-500/50 bg-gray-900/50 p-4 backdrop-blur-sm"
 				>
@@ -124,13 +135,6 @@
 						<span class="animate-pulse text-cyan-400">_</span>
 					</div>
 				</div>
-
-				<a href="/api/auth/login">
-					<button type="button" class="btn preset-filled-primary-950-50">Login</button>
-				</a>
-				<a href="/api/auth/register">
-					<button type="button" class="btn preset-filled-primary-950-50">Register</button>
-				</a>
 
 				<p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-400">
 					Access comprehensive Svelte development training modules. Enhance your skills through
