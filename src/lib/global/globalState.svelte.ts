@@ -3,12 +3,20 @@ export const counter = $state(
      }
 )
 
+interface User {
+    given_name?: string | null
+    family_name?: string | null
+    email?: string | null
+    picture?: string | null
+    id?: string | null
+}
+
 export const authState = $state({
-    user: null as unknown,
+    user: null as User | null,
     isAuthenticated: false
 })
 
-export function setAuthState(user: unknown, isAuthenticated: boolean) {
+export function setAuthState(user: User | null, isAuthenticated: boolean) {
     authState.user = user
     authState.isAuthenticated = isAuthenticated
 }
