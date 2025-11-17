@@ -11,7 +11,8 @@
 		{ href: '/tutorial/events', label: 'Events', icon: '🎯' },
 		{ href: '/tutorial/bindings', label: 'Bindings', icon: '🔄' },
 		{ href: '/tutorial/classes-styles', label: 'Classes & Styles', icon: '🎨' },
-		{ href: '/tutorial/motion', label: 'Motion', icon: '✨' }
+		{ href: '/tutorial/motion', label: 'Motion', icon: '✨' },
+		{ href: '/tutorial/pokemon', label: 'Dynamic Routes', icon: '🎮' }
 	];
 </script>
 

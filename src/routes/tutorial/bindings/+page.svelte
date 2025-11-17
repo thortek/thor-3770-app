@@ -22,7 +22,7 @@
 
 	<!-- Text Input Binding Section -->
 	<section class="mb-12">
-		<div class="card preset-filled p-8">
+		<div class="card preset-filled-primary-50-950 p-8">
 			<div class="flex items-center gap-3 mb-6">
 				<span class="text-4xl">✍️</span>
 				<h2 class="text-3xl font-bold">Text Input Binding</h2>
@@ -31,8 +31,9 @@
 			
 			<div class="card preset-tonal p-6">
 				<div class="mb-6">
-					<label class="label mb-2">Type your name:</label>
+					<label class="label mb-2" for="name-input">Type your name:</label>
 					<input 
+						id="name-input"
 						class="input w-full" 
 						type="text" 
 						bind:value={name} 
@@ -49,7 +50,7 @@
 
 	<!-- Textarea & HTML Rendering Section -->
 	<section class="mb-12">
-		<div class="card preset-filled p-8">
+		<div class="card preset-filled-primary-50-950 p-8">
 			<div class="flex items-center gap-3 mb-6">
 				<span class="text-4xl">📝</span>
 				<h2 class="text-3xl font-bold">Textarea & Markdown</h2>
@@ -63,7 +64,7 @@
 					placeholder="Type markdown here..."
 				></textarea>
 
-				<div class="p-6 card preset-filled">
+				<div class="p-6 card preset-filled-primary-100-900">
 					<p class="text-surface-600-400 text-sm mb-3">RENDERED MARKDOWN:</p>
 					<div class="prose prose-invert max-w-none">
 						{@html marked(markdownToShow)}
@@ -75,7 +76,7 @@
 
 	<!-- Number & Range Binding Section -->
 	<section class="mb-12">
-		<div class="card preset-filled p-8">
+		<div class="card preset-filled-primary-50-950 p-8">
 			<div class="flex items-center gap-3 mb-6">
 				<span class="text-4xl">🔢</span>
 				<h2 class="text-3xl font-bold">Number & Range Inputs</h2>
@@ -85,18 +86,19 @@
 			<div class="card preset-tonal p-8">
 				<div class="flex flex-col md:flex-row items-center justify-center gap-6">
 					<div>
-						<label class="label mb-2">Number Input:</label>
+						<label class="label mb-2" for="scoops-number">Number Input:</label>
 						<input 
+							id="scoops-number"
 							type="number" 
 							bind:value={scoops} 
 							class="input w-32 text-center" 
 							min="1" 
 							max="3" 
 						/>
-					</div>
 					<div class="flex-1 max-w-md">
-						<label class="label mb-2">Range Slider:</label>
+						<label class="label mb-2" for="scoops-range">Range Slider:</label>
 						<input
+							id="scoops-range"
 							type="range"
 							bind:value={scoops}
 							class="range w-full"
@@ -105,7 +107,8 @@
 							step="1"
 						/>
 					</div>
-					<div class="text-center card preset-filled px-6 py-4">
+					</div>
+					<div class="text-center card preset-filled-primary-50-950 px-6 py-4">
 						<p class="text-surface-600-400 text-xs mb-1">SCOOPS</p>
 						<p class="text-4xl font-bold text-primary-500">{scoops}</p>
 					</div>
@@ -116,7 +119,7 @@
 
 	<!-- InsecureQuestion Component -->
 	<section class="mb-12">
-		<div class="card preset-filled p-8">
+		<div class="card preset-filled-primary-100-900 p-8">
 			<div class="flex items-center gap-3 mb-6">
 				<span class="text-4xl">⚠️</span>
 				<h2 class="text-3xl font-bold">Component Binding Example</h2>
@@ -127,7 +130,7 @@
 
 	<!-- Ice Cream Form Section -->
 	<section class="mb-12">
-		<div class="card preset-filled p-8">
+		<div class="card preset-filled-primary-50-950 p-8">
 			<div class="flex items-center gap-3 mb-8">
 				<span class="text-4xl">🍦</span>
 				<h2 class="text-3xl font-bold">Complete Form Example</h2>
@@ -157,7 +160,7 @@
 					<!-- Checkboxes -->
 					<div class="mb-8">
 						<h3 class="text-xl font-semibold mb-4">Select Flavors</h3>
-						<div class="grid md:grid-cols-3 gap-4 mb-4">
+						<div class="grid md:grid-cols-3 gap-4 mb-4 ">
 							{#each availableFlavors as flavor}
 								<label class="flex items-center gap-3 card preset-outlined px-4 py-3 cursor-pointer hover:preset-tonal transition-colors duration-300">
 									<input 
@@ -189,7 +192,7 @@
 					<div class="mb-8">
 						<h3 class="text-xl font-semibold mb-4">Alternative: Multi-Select</h3>
 						<select 
-							class="select w-full" 
+							class="select w-full bg-primary-50-950" 
 							multiple 
 							bind:value={flavors}
 							size="3"
@@ -215,7 +218,7 @@
 
 	<!-- Key Concepts -->
 	<section class="mb-12">
-		<div class="card preset-filled p-8">
+		<div class="card preset-filled-primary-50-950 p-8">
 			<div class="flex items-center gap-3 mb-6">
 				<span class="text-4xl">💡</span>
 				<h2 class="text-3xl font-bold">Binding Types</h2>

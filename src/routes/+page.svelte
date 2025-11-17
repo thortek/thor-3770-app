@@ -55,6 +55,27 @@
 			icon: '🔄',
 			href: '/tutorial/bindings',
 			color: 'from-indigo-500 to-violet-500'
+		},
+		{
+			title: 'Classes & Styles',
+			description: 'Dynamic styling & CSS management',
+			icon: '🎨',
+			href: '/tutorial/classes-styles',
+			color: 'from-pink-500 to-rose-500'
+		},
+		{
+			title: 'Motion',
+			description: 'Animations & transitions',
+			icon: '✨',
+			href: '/tutorial/motion',
+			color: 'from-yellow-500 to-amber-500'
+		},
+		{
+			title: 'Dynamic Routes',
+			description: 'Explore Pokemon with dynamic routing',
+			icon: '🎮',
+			href: '/tutorial/pokemon',
+			color: 'from-red-500 to-orange-500'
 		}
 	]
 </script>
@@ -199,7 +220,7 @@
 									Authentication Required
 								</h2>
 								<p class="mb-8 text-lg text-gray-400">
-									Unlock access to 5 comprehensive Svelte training modules with interactive tutorials
+									Unlock access to 8 comprehensive Svelte training modules with interactive tutorials
 									and hands-on coding experiences.
 								</p>
 
@@ -257,7 +278,7 @@
 			<div class="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
 				<div
 					class="rounded-lg border border-gray-700 bg-gray-900/50 p-4 text-center backdrop-blur-sm">
-					<div class="text-2xl font-bold text-cyan-400">05</div>
+					<div class="text-2xl font-bold text-cyan-400">08</div>
 					<div class="font-mono text-sm text-gray-400">MODULES</div>
 				</div>
 				<div

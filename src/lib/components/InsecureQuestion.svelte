@@ -29,7 +29,7 @@
     }
 </script>
 
-<div class="m-4 mx-auto w-2/3 card bg-amber-100 p-4">
+<div class="m-4 mx-auto w-2/3 card preset-filled-primary-50-950 p-4">
 	<h2>Insecure Question Component</h2>
 
 	<form class="form" onsubmit="{handleSubmit}">
